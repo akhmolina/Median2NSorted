@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MedianCalculator {
 
@@ -14,6 +16,14 @@ public class MedianCalculator {
 	        System.out.println("Введите второй отсортированный по возрастанию массив N натуральных чисел, разделенных любым символом (одной строкой):");
 	        String secondN = in.nextLine();
 	        
+	        //убираем начальные и конечные нечисловые символы
+	        Pattern p = Pattern.compile("^\\D*((\\d+\\D+)*\\d+)\\D*$");  
+	        Matcher firstm = p.matcher(firstN);
+	        Matcher secondm = p.matcher(secondN);
+	        
+	        if (firstm.matches()){firstN = firstm.group(1);}
+	        if (secondm.matches()){secondN = secondm.group(1);}
+
 			firstNarray = firstN.split("\\D+");
 			secondNarray = secondN.split("\\D+");
 			N = firstNarray.length;
