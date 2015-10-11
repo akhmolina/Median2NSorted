@@ -11,12 +11,12 @@ public class MedianCalculator {
 		Scanner in = new Scanner(System.in);		
 		do
 		{
-			System.out.println("Введите первый отсортированный по возрастанию массив N натуральных чисел, разделенных любым символом (одной строкой):");
+			System.out.println("Р’РІРµРґРёС‚Рµ РїРµСЂРІС‹Р№ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РїРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ РјР°СЃСЃРёРІ N РЅР°С‚СѓСЂР°Р»СЊРЅС‹С… С‡РёСЃРµР», СЂР°Р·РґРµР»РµРЅРЅС‹С… Р»СЋР±С‹Рј СЃРёРјРІРѕР»РѕРј (РѕРґРЅРѕР№ СЃС‚СЂРѕРєРѕР№):");
 	        String firstN = in.nextLine();
-	        System.out.println("Введите второй отсортированный по возрастанию массив N натуральных чисел, разделенных любым символом (одной строкой):");
+	        System.out.println("Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕР№ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РїРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ РјР°СЃСЃРёРІ N РЅР°С‚СѓСЂР°Р»СЊРЅС‹С… С‡РёСЃРµР», СЂР°Р·РґРµР»РµРЅРЅС‹С… Р»СЋР±С‹Рј СЃРёРјРІРѕР»РѕРј (РѕРґРЅРѕР№ СЃС‚СЂРѕРєРѕР№):");
 	        String secondN = in.nextLine();
 	        
-	        //убираем начальные и конечные нечисловые символы
+	        //deleting non-digits at the start and the end
 	        Pattern p = Pattern.compile("^\\D*((\\d+\\D+)*\\d+)\\D*$");  
 	        Matcher firstm = p.matcher(firstN);
 	        Matcher secondm = p.matcher(secondN);
@@ -28,7 +28,7 @@ public class MedianCalculator {
 			secondNarray = secondN.split("\\D+");
 			N = firstNarray.length;
 			if (N != secondNarray.length)
-			{System.out.println("Введенные массивы имеют не одинаковый размер. Веедите массивы заново.");}
+			{System.out.println("Р’РІРµРґРµРЅРЅС‹Рµ РјР°СЃСЃРёРІС‹ РёРјРµСЋС‚ РЅРµ РѕРґРёРЅР°РєРѕРІС‹Р№ СЂР°Р·РјРµСЂ. Р’РµРµРґРёС‚Рµ РјР°СЃСЃРёРІС‹ Р·Р°РЅРѕРІРѕ.");}
 		}while (firstNarray.length != secondNarray.length);	
 		in.close();
 		
@@ -59,7 +59,7 @@ public class MedianCalculator {
 		}
 		
 		double median = ((double)numbers[N-1] + (double)numbers[N])/2;
-		System.out.println("Медиана равна = " + median);
+		System.out.println("РњРµРґРёР°РЅР° СЂР°РІРЅР° = " + median);
 		
 	}
 
